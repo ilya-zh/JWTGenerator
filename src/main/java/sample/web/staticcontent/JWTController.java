@@ -14,12 +14,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class JWTController
 {
-  @GetMapping(path = "/showJWT", produces = "text/plain;charset=UTF-8")
+  @GetMapping(path = "/generateJWT", produces = "text/plain;charset=UTF-8")
   @ResponseBody
   public String greetingSubmit( @RequestParam(value = "signerKey") final String signerKey,
                                 @RequestParam(value = "clientID") final String clientID )
   {
     return JwtApp.generateJwt(signerKey, clientID, 0);
-//    return "dd";
   }
 }

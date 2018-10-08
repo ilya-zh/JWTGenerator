@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Static</title>
+    <title>Generate JWT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css"
           href="webjars/bootstrap/3.0.3/css/bootstrap.min.css"/>
@@ -10,13 +10,12 @@
 <script type="text/javascript"
         src="webjars/jquery/2.0.3/jquery.min.js"></script>
 <div class="jumbotron">
-    <h1>Home</h1>
-    <p>Some static content</p>
+    <h1>Generate JWT</h1>
     <p>
-    <form action="/showJWT">
-        <input name="clientID" placeholder="clientID">
-        <input name="signerKey" placeholder="signerKey">
-        <button class="btn btn-lg btn-primary" type="submit">Show JWT &raquo;</button>
+    <form action="/generateJWT">
+        <input name="clientID" placeholder="oauth.clientId">
+        <input name="signerKey" placeholder="oauth.signerKey">
+        <button class="btn btn-lg btn-primary" type="submit">Generate JWT &raquo;</button>
     </form>
     </p>
 </div>
