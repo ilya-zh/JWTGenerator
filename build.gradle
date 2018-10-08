@@ -3,11 +3,12 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.5.RELEASE")
+        classpath( "org.springframework.boot:spring-boot-gradle-plugin:2.0.5.RELEASE" )
     }
 }
 
 apply plugin: 'java'
+apply plugin: 'scala'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
@@ -15,7 +16,7 @@ apply plugin: 'io.spring.dependency-management'
 
 bootJar {
     baseName = 'gs-spring-boot'
-    version =  '0.1.0'
+    version = '0.1.0'
 }
 
 repositories {
@@ -25,9 +26,25 @@ repositories {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+sourceSets {
+    main {
+        scala {
+            srcDirs = ['src/main/scala']
+        }
+    }
+    test {
+        scala {
+            srcDirs = ['test/main/scala']
+        }
+    }
+}
+
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.webjars:bootstrap:3.0.3")
-    compile("org.webjars:jquery:2.0.3-1")
-    testCompile("junit:junit")
+    compile 'org.scala-lang:scala-library:2.11.12'
+    compile( "org.springframework.boot:spring-boot-starter-web" )
+    compile( "org.webjars:bootstrap:3.0.3" )
+    compile( "org.webjars:jquery:2.0.3-1" )
+    compile( "org.springframework.security:spring-security-jwt:1.0.2.RELEASE" )
+    compile( "org.springframework.security.oauth:spring-security-oauth2:1.0.2.RELEASE" )
+    testCompile( "junit:junit" )
 }
