@@ -19,6 +19,7 @@ package sample.web.staticcontent;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.ApplicationPidFileWriter;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication(exclude = {
@@ -32,7 +33,9 @@ public class SampleWebStaticApplication extends SpringBootServletInitializer {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(SampleWebStaticApplication.class, args);
+		SpringApplication app = new SpringApplication(SampleWebStaticApplication.class);
+		app.addListeners( new ApplicationPidFileWriter( "generateJWTApp.pid"));
+		app.run(args);
 	}
 
 }
