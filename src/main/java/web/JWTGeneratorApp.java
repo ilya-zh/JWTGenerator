@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package sample.web.staticcontent;
+package web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -25,15 +25,15 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 @SpringBootApplication(exclude = {
         org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class
     })
-public class SampleWebStaticApplication extends SpringBootServletInitializer {
+public class JWTGeneratorApp extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(SampleWebStaticApplication.class);
+		return application.sources( JWTGeneratorApp.class);
 	}
 
 	public static void main(String[] args) {
-		SpringApplication app = new SpringApplication(SampleWebStaticApplication.class);
+		SpringApplication app = new SpringApplication( JWTGeneratorApp.class);
 		app.addListeners( new ApplicationPidFileWriter( "generateJWTApp.pid"));
 		app.run(args);
 	}

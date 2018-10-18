@@ -1,4 +1,4 @@
-package sample.web.staticcontent;
+package web;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -6,7 +6,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 /**
- * Class description here
+ * Web Security Config
  *
  * @author Ilya Zhuravliov, Date: 08/10/2018
  */
